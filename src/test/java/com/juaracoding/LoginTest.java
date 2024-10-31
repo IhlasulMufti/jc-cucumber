@@ -14,9 +14,7 @@ import org.testng.Assert;
 public class LoginTest {
 
     private static WebDriver driver;
-
     private ExtentTest extentTest;
-
     private static LoginPage loginPage = new LoginPage();
 
     public LoginTest(){
@@ -67,7 +65,7 @@ public class LoginTest {
 
     @Then("I see message invalid credentials")
     public void i_see_message_invalid_credentials() {
-        Assert.assertEquals(loginPage.getTxtInvalid(), "Invalid credential");
+        Assert.assertEquals(loginPage.getTxtInvalid(), "Invalid credentials");
         Assert.assertEquals(
                 driver.getCurrentUrl(),
                 "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"

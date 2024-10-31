@@ -1,7 +1,6 @@
 package com.juaracoding.pages;
 
 import com.juaracoding.drivers.DriverSingleton;
-import com.juaracoding.utils.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -47,14 +46,27 @@ public class RecruitmentPage {
         menuRecruitment.click();
     }
 
-    public void addCandidate(){
+    public void setBtnAdd() {
         btnAdd.click();
-        Utils.delay(3);
-        firstName.sendKeys("Juara");
-        lastName.sendKeys("Coding");
-        email.sendKeys("admin@juaracoding.co.id");
-        resume.sendKeys("C:\\Users\\ihlas\\OneDrive\\Dokumen\\JC_SQA\\JC_RESUME.docx");
-        Utils.delay(3);
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName.sendKeys(firstName);
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName.sendKeys(lastName);
+    }
+
+    public void setEmail(String email) {
+        this.email.sendKeys(email);
+    }
+
+    public void setResume(String resume) {
+        this.resume.sendKeys(resume);
+    }
+
+    public void setBtnSave() {
         btnSave.click();
     }
 
