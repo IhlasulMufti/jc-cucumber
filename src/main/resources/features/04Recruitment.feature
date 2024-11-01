@@ -1,5 +1,5 @@
 Feature: Recruitment Add Candidate
-
+# comment for scenario test
   Scenario: Admin add new candidate
     Given Admin logged in
     And Admin go to menu Recruitment

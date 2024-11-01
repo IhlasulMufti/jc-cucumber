@@ -1,6 +1,7 @@
 package com.juaracoding;
 
 import com.juaracoding.drivers.DriverSingleton;
+import com.juaracoding.utils.Constants;
 import com.juaracoding.utils.ScenarioTests;
 import com.juaracoding.utils.Utils;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -19,7 +20,7 @@ public class Hooks {
 
     @Before
     public void setUp() {
-        DriverSingleton.getInstance("firefox");
+        DriverSingleton.getInstance(Constants.FIREFOX);
         driver = DriverSingleton.getDriver();
         ScenarioTests[] tests = ScenarioTests.values();
         extentTest = reports.startTest(tests[Utils.testCount].getScenarioTestName());

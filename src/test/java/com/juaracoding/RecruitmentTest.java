@@ -2,6 +2,8 @@ package com.juaracoding;
 
 import com.juaracoding.pages.LoginPage;
 import com.juaracoding.pages.RecruitmentPage;
+import com.juaracoding.utils.Constants;
+import com.juaracoding.utils.Utils;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.en.And;
@@ -25,7 +27,7 @@ public class RecruitmentTest {
 
     @Given("Admin logged in")
     public void admin_logged_in(){
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        driver.get(Constants.URL);
         loginPage.loginUser("Admin", "admin123");
         loginPage.setBtnLogin();
         extentTest.log(LogStatus.PASS, "Admin logged in");
@@ -75,6 +77,7 @@ public class RecruitmentTest {
 
     @Then("Admin redirect to page Application Stage")
     public void admin_redirect_to_page_application_stage(){
+        Utils.delay(5);
         Assert.assertEquals(recruitmentPage.getTxtApplicationStage(), "Application Stage");
         Assert.assertEquals(recruitmentPage.getTxtFirstValidation(), "Juara Coding");
         extentTest.log(LogStatus.PASS, "Admin redirect to page Application Stage");

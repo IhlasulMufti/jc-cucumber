@@ -1,6 +1,7 @@
 package com.juaracoding;
 
 import com.juaracoding.pages.LoginPage;
+import com.juaracoding.utils.Constants;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.en.And;
@@ -24,7 +25,7 @@ public class LoginTest {
 
     @Given("I am on the login page")
     public void i_am_on_the_login_page() {
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        driver.get(Constants.URL);
         extentTest.log(LogStatus.PASS, "I am on the login page");
     }
 
